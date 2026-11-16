@@ -4,8 +4,6 @@ An end-to-end financial crime detection microservice that ingests high-velocity 
 
 ## System Architecture
 
-## System Architecture
-
 ```mermaid
 flowchart LR
     A[Synthetic Event Stream] --> B[Feature Engineering]

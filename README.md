@@ -4,14 +4,16 @@ An end-to-end financial crime detection microservice that ingests high-velocity 
 
 ## System Architecture
 
+## System Architecture
+
 ```mermaid
 flowchart LR
-    A[Synthetic Event Stream] --> B[Feature Engineering<br/>24h Velocity & Threshold Proximity]
-    B --> C[Isolation Forest<br/>Anomaly Scoring Engine]
+    A[Synthetic Event Stream] --> B[Feature Engineering]
+    B --> C[Isolation Forest Anomaly Scorer]
     C --> D{Risk Tiering}
-    D -->|Score >= 70| E[HIGH_SAR_REVIEW + Reason Codes]
-    D -->|45 <= Score < 70| F[MEDIUM_UAR + Reason Codes]
-    D -->|Score < 45| G[LOW / Baseline Log]`\
+    D -->|Score >= 70| E[HIGH_SAR_REVIEW]
+    D -->|45 <= Score < 70| F[MEDIUM_UAR]
+    D -->|Score < 45| G[LOW / Baseline]
 ```
 
 Key Capabilities
